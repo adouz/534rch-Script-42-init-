@@ -1,7 +1,7 @@
 # 534rch
 a shell script to search on internet from terminal.
 
-[![534rch](https://i.ytimg.com/vi/QcC9RStc0TE/hqdefault.jpg)](https://youtu.be/QcC9RStc0TE "534rch shell script")
+[![534rch](https://serving.photos.photobox.com/446469324a0e7e782c70c37e3fdbe2e8a0d8dce6125f86c1e6c5b8c0071ff50265a7888d.jpg)](https://youtu.be/QcC9RStc0TE "534rch shell script")
 
 About
 ------
