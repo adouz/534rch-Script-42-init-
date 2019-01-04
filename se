@@ -1,0 +1,136 @@
+#!/bin/bash
+
+# Text format
+_DEF='\033[0m'
+_GRAS='\033[1m'
+_SOUL='\033[4m'
+_CLIG='\033[5m'
+_SURL='\033[7m'
+
+# Colors
+_BLACK='\033[30m'
+_RED='\033[31m'
+_GREEN='\033[32m'
+_YELLOW='\033[33m'
+_BLUE='\033[34m'
+_PURPLE='\033[35m'
+_CYAN='\033[36m'
+_GREY='\033[37m'
+
+function header()
+{
+	clear
+	echo  "$_PURPLE"
+	echo "888888888   .d8888b.      d8888  8888888b.   .d8888b.  888    888 "
+	echo "888        d88P  Y88b    d8P888  888   Y88b d88P  Y88b 888    888 "
+	echo "888             .d88P   d8P 888  888    888 888    888 888    888 "
+	echo "8888888b.      8888\"   d8P  888  888   d88P 888        8888888888 "
+	echo "     \"Y88b      \"Y8b. d88   888  8888888P\"  888        888    888 "
+	echo "       888 888    888 8888888888 888 T88b   888    888 888    888 "
+	echo "Y88b  d88P Y88b  d88P       888  888  T88b  Y88b  d88P 888    888 "
+	echo " \"Y8888P\"   \"Y8888P\"        888  888   T88b  \"Y8888P\"  888    888 "
+	echo "                                                         by: do02"
+	echo  "$_SURL"
+}
+
+function menu()
+{
+	printf -- '\033[33m ~~~*{choose where you wanna search}*~~~ \033[0m\n\n';
+	printf -- '\033[0;33m 1) StackOverflow \033[0;33m\n';
+	printf -- '\033[01;31m 2) Youtube \033[01;31m\n';
+	printf -- '\033[01;32m 3) Google \033[01;32m\n';
+	printf -- '\033[01;34m 4) DuckDuckGo \033[01;34m\n';
+	printf -- '\033[01;35m 5) Intra 42 \033[01;35m\n';
+	printf -- '\033[0;30mDontChoose6\033[0;30m\n';
+	printf -- '\033[0;0m\033[0;0m\n';
+	read -p $'\e[35mentre number: \e[0m' -n 1 num
+	echo ""
+}
+
+function fun(){ 
+	echo "OK, Go Try Subscribe its FREE!"
+	open "https://bit.ly/2GGoexZ"
+}
+
+function help()
+{
+	echo "usage: se [-h] [WEBSITE] [KEYWORD \"KEYWORD ...\"]"
+
+	echo "\n534RCH: Search from terminal."
+
+	echo "\npositional arguments:"
+	echo "	WEBSITE				website to search on"
+	echo "	KEYWORD				search keyword"
+
+	echo "\noptional arguments:"
+	echo "	-h, --help			show this help message and exit"
+
+	echo "\nWEBSITE:"
+	echo "	google, go				https://www.google.com"
+	echo "	youtube, yt				https://www.youtube.com"
+	echo "	stackoverflow, stack			https://stackoverflow.com"
+	echo "	duckduckgo, duck			https://duckduckgo.com"
+	echo "	intra, 42				https://profile.intra.42.fr"
+
+	echo "\nMade in 1337 <https://1337.ma>"
+	echo "by: do02 <https://instagram.com/doz.jpg>"
+	echo "Webpage: https://github.com/do02/534rch"
+}
+
+if [ $# -eq 0 ]; then
+	header
+	menu
+else
+	case $1 in
+		stack) num=1;;
+		stackoverflow) num=1;;
+		youtube) num=2;;
+		yt) num=2;;
+		google) num=3;;
+		Google) num=3;;
+		go) num=3;;
+		duck) num=4;;
+		duckduckgo) num=4;;
+		intra) num=5;;
+		42) num=5;;
+		-h|--help|*)help
+			exit;;
+	esac
+
+fi
+
+case $num in 6) clear
+	fun
+	exit;; esac
+
+if [ $# -lt 2 ]; then
+	read -p $'\e[35mYOUR SEARCH: \e[0m' search
+elif [ $# -gt 2 ]; then
+	read -p $'\e[35mYOUR SEARCH: \e[0m' search
+else
+	search=$2
+fi
+
+case $num in
+	1)	site="StackOverflow"
+		echo "$_YELLOW Searching on $site for $search"
+		open "https://$site.com/search?q=$search"
+		;;
+	2)	site="Youtube"
+		echo "$_GRAS$_RED Searching on $site for $search"
+		open "https://$site.com/search?q=$search"
+		;;
+	3)	site="Google"
+		echo "$_GRAS$_CYAN Searching on $site for $search"
+		open "http://$site.com/search?q=$search"
+		;;
+	4)	site="Duckduckgo"
+		echo "$_GRAS$_YELLOW Searching on $site for $search"	
+		open "https://$site.com/?q=$search"
+		;;
+	5)	site="Intra.42"
+		echo "$_GRAS$_GREY Searching on $site for $search"
+		open "https://profile.$site.fr/searches/search?query=$search"
+		;; 
+	*) printf -- '\033[31mError!\033[0m\n';
+esac
