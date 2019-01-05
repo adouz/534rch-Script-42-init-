@@ -65,7 +65,7 @@ Y88b  d88P Y88b  d88P       888  888  T88b  Y88b  d88P 888    888
  "Y8888P"   "Y8888P"        888  888   T88b  "Y8888P"  888    888
                                                          by: do02
 
- ~~~*{choose where you wanna search}*~~~
+ ~~~*{choose where you want to search}*~~~
 
  1) StackOverflow
  2) Youtube
