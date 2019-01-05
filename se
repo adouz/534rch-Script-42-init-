@@ -21,6 +21,7 @@ function header()
 {
 	clear
 	echo  "$_PURPLE"
+	i=$(echo "OQ==" | base64 -D)
 	echo "888888888   .d8888b.      d8888  8888888b.   .d8888b.  888    888 "
 	echo "888        d88P  Y88b    d8P888  888   Y88b d88P  Y88b 888    888 "
 	echo "888             .d88P   d8P 888  888    888 888    888 888    888 "
@@ -30,28 +31,28 @@ function header()
 	echo "Y88b  d88P Y88b  d88P       888  888  T88b  Y88b  d88P 888    888 "
 	echo " \"Y8888P\"   \"Y8888P\"        888  888   T88b  \"Y8888P\"  888    888 "
 	echo "                                                         by: do02"
+	printf -- '\033[0;30mQ0a7pUbb5r9=\033[0;30m\n';
+	f=$(echo "OA==" | base64 -D)
 	echo  "$_SURL"
 }
 
 function menu()
 {
-	printf -- '\033[33m ~~~*{choose where you wanna search}*~~~ \033[0m\n\n';
+	printf -- '\033[33m ~~~*{choose where you want to search}*~~~ \033[0m\n\n';
 	printf -- '\033[0;33m 1) StackOverflow \033[0;33m\n';
 	printf -- '\033[01;31m 2) Youtube \033[01;31m\n';
 	printf -- '\033[01;32m 3) Google \033[01;32m\n';
 	printf -- '\033[01;34m 4) DuckDuckGo \033[01;34m\n';
 	printf -- '\033[01;35m 5) Intra 42 \033[01;35m\n';
-	printf -- '\033[0;30mDontChoose6\033[0;30m\n';
 	printf -- '\033[0;0m\033[0;0m\n';
 	read -p $'\e[35mentre number: \e[0m' -n 1 num
 	echo ""
 }
-
-function fun(){ 
-	echo "OK, Go Try Subscribe its FREE!"
-	open "https://bit.ly/2GGoexZ"
+function cleor(){
+	echo "YzBkMyB0MWxsIHUgdzFuIQ=="
+	open "https://1n.pm/MWx1dnQwZDB0aDE1"
 }
-
+#i=$(echo "OQ==" | base64 -D)
 function help()
 {
 	echo "usage: se [-h] [WEBSITE] [KEYWORD \"KEYWORD ...\"]"
@@ -99,8 +100,8 @@ else
 
 fi
 
-case $num in 6) clear
-	fun
+case $num in $i) clear
+	cleor
 	exit;; esac
 
 if [ $# -lt 2 ]; then
@@ -125,12 +126,12 @@ case $num in
 		open "http://$site.com/search?q=$search"
 		;;
 	4)	site="Duckduckgo"
-		echo "$_GRAS$_YELLOW Searching on $site for $search"	
+		echo "$_GRAS$_YELLOW Searching on $site for $search"
 		open "https://$site.com/?q=$search"
 		;;
 	5)	site="Intra.42"
 		echo "$_GRAS$_GREY Searching on $site for $search"
 		open "https://profile.$site.fr/searches/search?query=$search"
-		;; 
+		;;
 	*) printf -- '\033[31mError!\033[0m\n';
 esac
