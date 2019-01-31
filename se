@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Text format
 _DEF='\033[0m'
 _GRAS='\033[1m'
