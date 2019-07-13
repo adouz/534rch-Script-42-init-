@@ -6,8 +6,7 @@ a shell script to search on internet from terminal.
 About
 ------
 
-This script was a part of my school project (init) on 42 Cursus.
-and i just want to share it on my github.
+This script was a part of my school project (init) on 42 Cursus.(https://1337.ma/)
 
 Installation
 ------------
@@ -85,8 +84,3 @@ $> se yt "live overflow"
 $> se 42 adouz
  Searching on Intra.42 for adouz
 ```
-
-THANKS
--------
-Made in 1337 <https://1337.ma>
-by: do02 <https://instagram.com/doz.jpg>
